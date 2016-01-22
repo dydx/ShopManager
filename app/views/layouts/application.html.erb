@@ -31,6 +31,9 @@
       <%= content_tag(:li, link_to('Work Orders', work_orders_path), :class => ("active" if work_orders_page? )) %>
     </ul>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </div>
 
