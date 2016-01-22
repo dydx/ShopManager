@@ -11,7 +11,7 @@ Simple and easy to use automotive repair facility management software
 
 
 ## Entities and Relationships
-[Imgur](http://i.imgur.com/qKZxJbe.png)
+![Imgur](http://i.imgur.com/qKZxJbe.png)
 
 * Users: Users are the administrators of the system. Users roles can be varied
   depending on what their job title is. You may have "Service Advisors" as well
@@ -67,3 +67,37 @@ easily inform Sue that her car is ready to be picked up.
 
 Upon arrival, Sue receives her car keys and a printed copy of the work order
 made for her Honda earlier.
+
+## Screenshots
+
+![Home](http://imgur.com/JSc7enb.png)
+Landing Page (not signed in)
+
+![Sign In](http://imgur.com/YDw8QlJ.png)
+Sign Up/Sign In Page
+
+![Schedule](http://imgur.com/rpn8Cnt.png)
+Schedule Page, landing page if you are logged in
+
+![Vehicles](http://imgur.com/vikT3cV.png)
+Vehicles listings
+
+![Vehicle](http://imgur.com/y7bmnWz.png)
+Vehicle Show page (with Appointment form)
+
+![Customer](http://imgur.com/SPug6ke.png)
+Customer Show page
+
+## Cool Features
+Simple_Calendar: Simple calendar is a really cool rails gem that will take a
+collection of data and render it into an events calendar. It has options for
+weekly and monthly views, with many other customizations.
+
+## TODO
+Lots. I'd really like to actually get nested forms working right, so that I can
+populate a whole repair order with repairs at one time.
+
+I would also like to have a PDF print capability for repair orders and receipts.
+
+And a nice to have feature might be using a service like Twillio to notify
+customers that their car is done.
