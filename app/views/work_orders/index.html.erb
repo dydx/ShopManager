@@ -1,29 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Work Orders</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Start time</th>
-      <th>Vehicle</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h2>Weekly Schedule</h2>
+<%= week_calendar events: @work_orders do |date, appointments| %>
+  <%= date %>
 
-  <tbody>
-    <% @work_orders.each do |work_order| %>
-      <tr>
-        <td><%= work_order.start_time %></td>
-        <td><%= work_order.vehicle %></td>
-        <td><%= link_to 'Show', work_order %></td>
-        <td><%= link_to 'Edit', edit_work_order_path(work_order) %></td>
-        <td><%= link_to 'Destroy', work_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <% appointments.each do |appointment| %>
+    <% if !appointment.completed %>
+      <div>
+        <%= link_to appointment.customer.full_name, work_order_path(appointment) %>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+<% end %>
 
-<br>
-
-<%= link_to 'New Work order', new_work_order_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122043217) do
+ActiveRecord::Schema.define(version: 20160122100244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,10 +53,11 @@ ActiveRecord::Schema.define(version: 20160122043217) do
   add_index "vehicles", ["customer_id"], name: "index_vehicles_on_customer_id", using: :btree
 
   create_table "work_orders", force: :cascade do |t|
-    t.datetime "start_time", null: false
-    t.integer  "vehicle_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "start_time",                 null: false
+    t.integer  "vehicle_id",                 null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "completed",  default: false, null: false
   end
 
   add_index "work_orders", ["vehicle_id"], name: "index_work_orders_on_vehicle_id", using: :btree

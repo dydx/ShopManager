@@ -11,30 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
+    <%= f.label :customer_id, 'Customer' %>
+    <%= f.collection_select(:customer_id, Customer.all, :id, :full_name, class: 'form-control') %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :vin %><br>
-    <%= f.text_field :vin %>
+    <%= f.text_field :vin, class: 'form-control' %>
   </div>
-  <div class="field">
+
+  <div class="form-group">
     <%= f.label :mileage %><br>
-    <%= f.text_field :mileage %>
+    <%= f.text_field :mileage, class: 'form-control' %>
   </div>
-  <div class="field">
+
+  <div class="form-group">
     <%= f.label :year %><br>
-    <%= f.text_field :year %>
+    <%= f.text_field :year, class: 'form-control' %>
   </div>
-  <div class="field">
+
+  <div class="form-group">
     <%= f.label :make %><br>
-    <%= f.text_field :make %>
+    <%= f.text_field :make, class: 'form-control' %>
   </div>
-  <div class="field">
+
+  <div class="form-group">
     <%= f.label :model %><br>
-    <%= f.text_field :model %>
+    <%= f.text_field :model, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :customer_id %><br>
-    <%= f.text_field :customer_id %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

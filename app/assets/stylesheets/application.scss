@@ -1,0 +1,19 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.panel > form {
+  margin: 1em;
+}
+
+.simple-calendar {
+  margin-top: 3em;
+}
+
+.simple-calendar th, .simple-calendar td {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 2em;
+  text-align: center;
+}

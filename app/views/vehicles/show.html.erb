@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Vin:</strong>
-  <%= @vehicle.vin %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= @vehicle.description %></div>
+      <ul class="list-group">
+        <li class="list-group-item"><%= @vehicle.vin %></li>
+        <li class="list-group-item"><%= @vehicle.mileage %> miles</li>
+        <li class="list-group-item"><%= link_to @vehicle.customer.full_name, customer_path(@vehicle.customer) %></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Book an Appointment</div>
+      <%= form_for @work_order do |f| %>
 
-<p>
-  <strong>Mileage:</strong>
-  <%= @vehicle.mileage %>
-</p>
+        <%= f.hidden_field :vehicle_id, value: @vehicle.id %>
 
-<p>
-  <strong>Year:</strong>
-  <%= @vehicle.year %>
-</p>
+        <div class="form-group">
+          <%= f.label :start_time, "Arrival Time" %>
+          <%= f.datetime_local_field :start_time, class: 'form-control' %>
+        </div>
 
-<p>
-  <strong>Make:</strong>
-  <%= @vehicle.make %>
-</p>
+        <%= f.submit "Save" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Model:</strong>
-  <%= @vehicle.model %>
-</p>
+<hr>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @vehicle.customer %>
-</p>
-
-<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
-<%= link_to 'Back', vehicles_path %>
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %>

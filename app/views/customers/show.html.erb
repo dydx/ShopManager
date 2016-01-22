@@ -1,44 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @customer.first_name %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= @customer.full_name %>
+      <span class="badge pull-right">$2,500</span>
+    </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= @customer.address %><br>
+          <%= @customer.city %>, <%= @customer.state %>, <%= @customer.zip %>
+        </li>
+        <li class="list-group-item"><%= @customer.phone %></li>
+        <li class="list-group-item"><%= @customer.email %></li>
+      </ul>
+      <div class="panel-footer">
+        <%= link_to 'Edit', edit_customer_path(@customer) %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @customer.last_name %>
-</p>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= @customer.first_name %>'s Cars</div>
+      <ul class="list-group">
+        <% @customer.vehicles.each do |vehicle| %>
+          <li class="list-group-item">
+            <%= link_to vehicle.description, vehicle %>
+            <span class="badge"><%= vehicle.work_orders.count %></span>
+          </li>
+        <% end %>
+      </ul>
+      <div class="panel-footer">
+        <%= link_to 'Add A New Car', new_customer_vehicle_path(@customer) %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @customer.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @customer.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @customer.zip %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>

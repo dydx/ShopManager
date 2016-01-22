@@ -10,6 +10,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles/1
   # GET /vehicles/1.json
   def show
+    @work_order = @vehicle.work_orders.new
   end
 
   # GET /vehicles/new

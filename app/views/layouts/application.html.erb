@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ShopManager2</title>
+  <title>ShopManager | Home</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
+    <div class="page-header">
+      <div class="pull-left">
+        <h1>ShopManager</h1>
+      </div>
+      <div class="pull-right">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Josh Sandlin
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Edit Account', '#' %></li>
+            <li><%= link_to 'Sign Out', '#' %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <ul class="nav nav-pills">
+      <%= content_tag(:li, link_to('Customers', customers_path), :class => ("active" if customers_page? )) %>
+      <%= content_tag(:li, link_to('Vehicles', vehicles_path), :class => ("active" if vehicles_page? )) %>
+      <%= content_tag(:li, link_to('Work Orders', work_orders_path), :class => ("active" if work_orders_page? )) %>
+    </ul>
+
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>

@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= @work_order.customer.full_name %> <span class="pull-right"><%= @work_order.vehicle.description %></span>
+  </div>
+</div>
 <p>
   <strong>Start time:</strong>
   <%= @work_order.start_time %>

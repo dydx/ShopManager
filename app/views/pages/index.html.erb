@@ -1,0 +1,9 @@
+<%= week_calendar events: @work_orders do |date, work_orders| %>
+  <%= date %>
+
+  <% work_orders.each do |work_order| %>
+    <div>
+      <%= work_order.customer.first_name %> <% work_order.customer.last_name %>
+    </div>
+  <% end %>
+<% end %>
