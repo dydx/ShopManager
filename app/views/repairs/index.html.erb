@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Repairs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Time</th>
+      <th>Work order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @repairs.each do |repair| %>
+      <tr>
+        <td><%= repair.description %></td>
+        <td><%= repair.time %></td>
+        <td><%= repair.work_order %></td>
+        <td><%= link_to 'Show', repair %></td>
+        <td><%= link_to 'Edit', edit_repair_path(repair) %></td>
+        <td><%= link_to 'Destroy', repair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Repair', new_repair_path %>

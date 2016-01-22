@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @repair.description %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @repair.time %>
+</p>
+
+<p>
+  <strong>Work order:</strong>
+  <%= @repair.work_order %>
+</p>
+
+<%= link_to 'Edit', edit_repair_path(@repair) %> |
+<%= link_to 'Back', repairs_path %>
