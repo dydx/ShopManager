@@ -1,19 +1,15 @@
-<p id="notice"><%= notice %></p>
-
 <div class="panel panel-default">
   <div class="panel-heading">
-    <%= @work_order.customer.full_name %> <span class="pull-right"><%= @work_order.vehicle.description %></span>
+    <strong>Repair Order Overview</strong>
   </div>
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Date & Time</strong>: <%= @work_order.start_time %></li>
+    <li class="list-group-item"><strong>Name</strong>: <%= @work_order.customer.full_name %></li>
+    <li class="list-group-item"><strong>Address</strong>: <%= @work_order.customer.address %>, <%= @work_order.customer.city %>, <%= @work_order.customer.state %>, <%= @work_order.customer.zip %></li>
+    <li class="list-group-item"><strong>Vehicle (VIN)</strong>: <%= @work_order.vehicle.vin %></li>
+    <li class="list-group-item"><strong>Vehicle (Desc)</strong>: <%= @work_order.vehicle.description %></li>
+  </ul>
 </div>
-<p>
-  <strong>Start time:</strong>
-  <%= @work_order.start_time %>
-</p>
-
-<p>
-  <strong>Vehicle:</strong>
-  <%= @work_order.vehicle %>
-</p>
 
 <%= link_to 'Edit', edit_work_order_path(@work_order) %> |
 <%= link_to 'Back', work_orders_path %>

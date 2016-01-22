@@ -1,5 +1,6 @@
 class WorkOrdersController < ApplicationController
   before_action :set_work_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /work_orders
   # GET /work_orders.json

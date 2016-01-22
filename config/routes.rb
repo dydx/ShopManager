@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :repairs
   resources :work_orders
   resources :vehicles
+  devise_for :users
 end

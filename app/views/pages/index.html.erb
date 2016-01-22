@@ -1,9 +1,8 @@
-<%= week_calendar events: @work_orders do |date, work_orders| %>
-  <%= date %>
+<div class="jumbotron">
+  <h1>Say Hello to ShopManager</h1>
+  <p>ShopManager is an easy to use and simple to maintain customer and vehicle management solution for independent automotive repair facilitities.</p>
 
-  <% work_orders.each do |work_order| %>
-    <div>
-      <%= work_order.customer.first_name %> <% work_order.customer.last_name %>
-    </div>
-  <% end %>
-<% end %>
+  <p>Dealerships have powerful tools in their hands; why shouldn't you?</p>
+
+  <p><a class="btn btn-primary btn-lg" href="/users/sign_up">Sign Up Today</a></p>
+</div>
